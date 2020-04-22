@@ -1,4 +1,4 @@
-package djk.thread;
+package com.djk.thread;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -29,5 +29,18 @@ public class PersonLock {
         Thread.sleep(10000);
         System.out.println("read somethings end");
         lock.unlock();
+    }
+
+    public void stringIntern(String code) throws InterruptedException {
+
+        StringBuffer sb = new StringBuffer() ;
+        sb.append(code) ;
+        synchronized(sb.toString().intern()){
+            System.out.println("stringIntern start:" + code);
+            System.out.println("stringIntern sleep 10s:" +code);
+            Thread.sleep(10000);
+            System.out.println("stringIntern end:" + code);
+        }
+
     }
 }

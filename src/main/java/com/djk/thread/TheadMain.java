@@ -1,4 +1,4 @@
-package djk.thread;
+package com.djk.thread;
 
 /**
  * @ClassName TheadMain
@@ -15,9 +15,9 @@ public class TheadMain {
         new Thread(){
             public void run(){
                 try {
-                    Thread.sleep(2000);
-                    PersonSync person = new PersonSync() ;
-                    person.write();
+                    Thread.sleep(0);
+                    PersonLock person = new PersonLock() ;
+                    person.stringIntern("100");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -28,8 +28,8 @@ public class TheadMain {
             public void run(){
                 try {
                     Thread.sleep(0);
-                    PersonSync person = new PersonSync() ;
-                    person.read();
+                    PersonLock person = new PersonLock() ;
+                    person.stringIntern("200");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

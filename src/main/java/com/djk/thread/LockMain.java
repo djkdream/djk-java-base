@@ -1,4 +1,4 @@
-package djk.thread;
+package com.djk.thread;
 
 /**
  * @ClassName LockMain
